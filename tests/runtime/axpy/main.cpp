@@ -46,8 +46,6 @@ void axpy_intrinsics(double a, double *dx, double *dy)
     _MMR_f64 v_dx = _MM_LOAD_f64(&dx[i], gvl);
     _MMR_f64 v_dy = _MM_LOAD_f64(&dy[i], gvl);
     _MMR_f64 v_res = _MM_MACC_f64(v_dy, v_a, v_dx, gvl);
-    //arv:debug _MMR_f64 v_res_i = _MM_ADD_f64(v_dy, v_dx, gvl);
-    //arv:debug _MMR_f64 v_res = _MM_ADD_f64(v_res_i, v_a, gvl);
     _MM_STORE_f64(&dy[i], v_res, gvl);
 	
     i += gvl;
@@ -119,7 +117,7 @@ int main(/*arv int argc, char *argv[]*/)
 
     double a = 1.0;
 
-    vx_printf("n = %d\n", n);
+    //vx_printf("n = %d\n", n);
 
     /*arv if (argc == 2)
 	    n = 1024*atol(argv[1]); // input argument: vector size in Ks

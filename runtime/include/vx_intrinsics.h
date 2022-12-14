@@ -149,10 +149,6 @@ extern "C"
     }
 
     // Vector add
-    // TO_CHECK: instr type? S?
-    // TO_CHECK: using input/output params
-    // TO_CHECK: use of labels and jump statement
-    // TO_CHECK: Opcodes of vector instructions
     inline void vx_vec_vvaddint32(unsigned n, const int *a, const int *b, const int *c)
     {
         asm volatile("vvaddint32: vsetvli t0, %[n], e32\n\t"
